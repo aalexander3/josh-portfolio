@@ -8,12 +8,7 @@ class App extends Component {
   state = {
     songList: ['Skinned Knees', "Where'd You Go", "What We Call Love", "Noticed", "Make You Smile", "Sweet Cherie"],
     selectedSong: null,
-    playing: false
   }
-  // state lives here
-  // list of songs
-  // selected song
-  // playing - t/f
 
   selectSong = (songTitle) => {
     this.setState({
@@ -21,15 +16,10 @@ class App extends Component {
     })
   }
 
-  // renderPlayer = () => {
-  //   const { selectedSong } = this.state
-  //   return null
-  // }
-
   render() {
     const { songList, selectedSong } = this.state
     return (
-      <div className="App">
+      <div className="App" >
         <DisplayInfo />
         <MusicNav songList={songList} selectedSong={selectedSong} selectSong={this.selectSong} />
         <MusicPlayer selectedSong={selectedSong} />

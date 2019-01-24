@@ -1,0 +1,7 @@
+.button-control {
+  display: flex;
+}
+
+.button {
+  width: 2rem;
+}

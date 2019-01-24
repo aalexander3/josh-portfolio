@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ButtonControls from './ButtonControls'
 import noticed from './../assets/music/Noticed.wav'
 import makeYouSmile from './../assets/music/Make You Smile.wav'
 import skinnedKnees from './../assets/music/Skinned Knees.wav'
@@ -22,23 +23,66 @@ class MusicPlayer extends Component {
   constructor(props) {
     super(props);
     this.myRef = React.createRef();
+    // this.state = {
+    //   playing: false
+    // }
+  }
+
+  componentDidMount(){
+    document.addEventListener('keydown', this.spacePressed)
   }
 
   componentDidUpdate(prevProps){
     const { current } = this.myRef
     current.src = musicMap[this.props.selectedSong]
-    current.play()
+
+    // current.play()
   }
 
   componentDidUnMount(){
     this.myRef.current.pause()
   }
 
+  spacePressed = (e) => {
+    if (e.code === "Space") {
+      const { current } = this.myRef
+      if (current.paused) {
+        current.play()
+      } else {
+        current.pause()
+      }
+      // console.log('space hit');
+
+    }
+  }
+
+  playTrack = () => {
+    const { current } = this.myRef
+    current.play()
+
+    // this.setState({playing: true})
+  }
+
+  pauseTrack = () => {
+    const { current } = this.myRef
+    current.pause()
+
+    // this.setState({playing: false})
+  }
+
+  checkPause = () => {
+    return this.myRef.current && this.myRef.current.paused
+  }
+  
   render(){
     return (
       <div className="music-player">
-        <audio className="player" ref={this.myRef} src="" >
-        </audio>
+        <audio className="player" ref={this.myRef} src="" ></audio>
+        <ButtonControls
+          playTrack={this.playTrack}
+          pauseTrack={this.pauseTrack}
+          checkPause={this.checkPause}
+          selectedSong={this.props.selectedSong} />
       </div>
     )
   }
