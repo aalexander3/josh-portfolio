@@ -1,0 +1,9 @@
+.display-info {
+  color: white;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.display-info h1, h2 {
+  font-family: 'Major Mono Display';
+}

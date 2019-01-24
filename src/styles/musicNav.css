@@ -1,0 +1,34 @@
+.music-nav {
+  grid-column: 2;
+  grid-row: 1/4;
+  overflow: scroll;
+}
+
+.song-title {
+  /* width: 100%; */
+  font-family: 'Staatliches', serif;
+  font-size: 6rem;
+  font-weight: bolder;
+  font-stretch: expanded;
+  line-height: .1rem;
+  float:right;
+  padding-right: 5vw;
+  transform-style: preserve-3d;
+  transform-origin: right center;
+  transform: rotate3d(0, 1, 0, -35deg) scale(1) translateZ(0);
+  transition: all .3s linear;
+}
+
+.song-container {
+  width: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: right center;
+  transform: perspective(300vw);
+}
+
+.song-title:hover {
+  transform: rotate3d(0, 1, 0, -25deg) scale(1.1) translateZ(0);
+  color: white;
+
+}
