@@ -1,7 +1,8 @@
 .display-info {
-  color: white;
+  color: #F5E3E0;
   grid-column: 1;
   grid-row: 2;
+  padding: 0 10vw;
 }
 
 .display-info h1, h2 {

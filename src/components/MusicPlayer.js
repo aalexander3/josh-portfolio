@@ -22,10 +22,14 @@ class MusicPlayer extends Component {
 
   constructor(props) {
     super(props);
-    this.myRef = React.createRef();
-    // this.state = {
-    //   playing: false
-    // }
+    this.myRef = React.createRef()
+    this.interval = 0
+
+    this.state = {
+      player: false,
+      paused: true,
+      currentTime: 0
+    }
   }
 
   componentDidMount(){
@@ -33,47 +37,82 @@ class MusicPlayer extends Component {
   }
 
   componentDidUpdate(prevProps){
-    const { current } = this.myRef
-    current.src = musicMap[this.props.selectedSong]
+    if (prevProps.selectedSong !== this.props.selectedSong) {
 
-    // current.play()
-  }
-
-  componentDidUnMount(){
-    this.myRef.current.pause()
-  }
-
-  spacePressed = (e) => {
-    if (e.code === "Space") {
       const { current } = this.myRef
-      if (current.paused) {
-        current.play()
-      } else {
-        current.pause()
-      }
-      // console.log('space hit');
+      current.src = musicMap[this.props.selectedSong]
 
+      this.setState({
+        player: current,
+        paused: true,
+        currentTime: 0
+      }, this.playTrack)
     }
   }
 
-  playTrack = () => {
-    const { current } = this.myRef
-    current.play()
+  componentDidUnMount(){
+    this.pauseMusic()
+  }
 
-    // this.setState({playing: true})
+  spacePressed = (e) => {
+    e.preventDefault()
+    if (this.props.selectedSong && e.code === "Space") {
+      const { paused } = this.state
+      if (paused) {
+        this.playTrack()
+      } else {
+        this.pauseTrack()
+      }
+    }
+  }
+
+  startTime = () => {
+    this.setState(prevState => {
+      return {
+        currentTime: ++prevState.currentTime
+      }
+    })
+  }
+
+  stopTime = () => {
+    clearInterval(this.interval)
+  }
+
+  playTrack = () => {
+    this.interval = setInterval(this.startTime, 1000)
+    this.setState({
+      paused: false
+    }, this.playMusic )
+  }
+
+  playMusic = () => {
+    const { player } = this.state
+    player.currentTime = this.state.currentTime
+
+    player.play()
   }
 
   pauseTrack = () => {
-    const { current } = this.myRef
-    current.pause()
+    const { player } = this.state
+    const time = player.currentTime
+    this.stopTime()
 
-    // this.setState({playing: false})
+    this.setState({
+      paused: true,
+      currentTime: time
+    }, this.pauseMusic)
+  }
+
+  pauseMusic = () => {
+    const { player } = this.state
+    player.pause()
   }
 
   checkPause = () => {
-    return this.myRef.current && this.myRef.current.paused
+    const { player } = this.state
+    return player && player.paused
   }
-  
+
   render(){
     return (
       <div className="music-player">
@@ -81,8 +120,10 @@ class MusicPlayer extends Component {
         <ButtonControls
           playTrack={this.playTrack}
           pauseTrack={this.pauseTrack}
-          checkPause={this.checkPause}
-          selectedSong={this.props.selectedSong} />
+          paused={this.state.paused}
+          currentTime={this.state.player.currentTime}
+          selectedSong={this.props.selectedSong}
+          duration={this.state.player.duration} />
       </div>
     )
   }

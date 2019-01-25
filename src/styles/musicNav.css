@@ -29,6 +29,6 @@
 
 .song-title:hover {
   transform: rotate3d(0, 1, 0, -25deg) scale(1.1) translateZ(0);
-  color: white;
+  color: #F5E3E0;
 
 }
