@@ -6,8 +6,7 @@ const DisplayInfo = () => {
     <div className="display-info">
       <h1>J DID</h1>
       <h2>Josh Dykstra</h2>
-      <h3>Producer | Madison, WI</h3>
-
+      <h2>Producer | Madison, WI</h2>
     </div>
   )
 }

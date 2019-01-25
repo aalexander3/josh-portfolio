@@ -28,13 +28,13 @@ class App extends Component {
 
   startColors = () => {
     let interval = setInterval(() => {
-      this.setState({color: this.nextColor()})
+      this.setState({color: this.nextColor(), interval})
     }, 4000)
   }
 
   nextColor = () => {
     if (this.state.color < colors.length){
-      return ++this.state.color
+      return this.state.color + 1
     } else {
       return 0
     }

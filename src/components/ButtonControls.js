@@ -9,8 +9,10 @@ const ButtonControls = ({ paused, playTrack, pauseTrack, selectedSong, currentTi
       const seconds = Math.round(duration - (minutes * 60))
       if (seconds < 10) {
         return `${minutes}:0${seconds}`
-      } else {
-        return `${minutes}:${seconds}`
+      } else if (seconds === 60) {
+        return `${minutes}:00`
+      } else  {
+        return `${minutes+1}:${seconds}`
       }
     } else {
       return `0:00`
@@ -23,6 +25,8 @@ const ButtonControls = ({ paused, playTrack, pauseTrack, selectedSong, currentTi
       const seconds = Math.round(currentTime - (minutes * 60))
       if (seconds < 10) {
         return `${minutes}:0${seconds}`
+      } else if (seconds === 60) {
+        return `${minutes+1}:00`
       } else {
         return `${minutes}:${seconds}`
       }
