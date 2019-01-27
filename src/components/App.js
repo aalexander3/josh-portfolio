@@ -2,25 +2,32 @@ import React, { Component } from 'react';
 import DisplayInfo from './DisplayInfo'
 import MusicNav from './MusicNav'
 import MusicPlayer from './MusicPlayer'
+import ArtNav from './ArtNav'
+import { Switch, Route } from 'react-router-dom'
 import '../styles/App.css';
 
 const colors = ['pink', 'orange', 'red', 'purple', 'indigo', 'cyan', 'green', 'yellow']
 const songs = ['Skinned Knees', "Where'd You Go", "What We Call Love", "Noticed", "Make You Smile", "Sweet Cherie"]
+const artworks = ['Arren Site', 'Forecast Detail', 'Forecast VR', 'Investr', 'Josh Site', 'VR Scene']
 
 class App extends Component {
   state = {
     songList: songs,
     selectedSong: null,
+    artworks: artworks,
     color: 0,
     interval: 0
   }
 
-  componentDidUnMount(){
+  componentDidMount(){
+    this.startColors()
+  }
+
+  componentWillUnmount(){
     clearInterval(this.state.interval)
   }
 
   selectSong = (songTitle) => {
-    this.startColors()
     this.setState({
       selectedSong: songTitle
     })
@@ -41,11 +48,18 @@ class App extends Component {
   }
 
   render() {
-    const { songList, selectedSong } = this.state
+    const { songList, selectedSong, artworks } = this.state
     return (
       <div className={`App ${colors[this.state.color]}`}>
         <DisplayInfo />
-        <MusicNav songList={songList} selectedSong={selectedSong} selectSong={this.selectSong} />
+        <Switch>
+          <Route exact path='/' render={()=> {
+              return <MusicNav songList={songList} selectedSong={selectedSong} selectSong={this.selectSong} />
+            }}/>
+          <Route exact path='/artwork' render={() => {
+              return <ArtNav artworks={artworks} />
+            }}/>
+        </Switch>
         <MusicPlayer selectedSong={selectedSong} />
       </div>
     );

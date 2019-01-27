@@ -10,20 +10,41 @@
   padding-left: 10vw;
 }
 
+.song-controls {
+  display: flex;
+  flex-direction: row;
+}
+
 .button {
   width: 1.5rem;
+  cursor: pointer;
 }
 
 .buttons {
   display: flex;
+  margin: 0 2vw;
 }
 
 .progress-bar {
   display: flex;
   align-items: center;
-  margin: 0 2vw;
+  /* margin: 0 2vw; */
 }
 
-.title {
-  
+.nav-link {
+  color: #1D1E2B;
+  margin-right: 2vw;
+  text-decoration: none;
+  transition: all .2s linear;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: #2193b0;
+  transform: translateX(.2vw);
+  /* what about making the hover color the same as the background color??? */
+}
+
+.active {
+  text-decoration: underline;
 }

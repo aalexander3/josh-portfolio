@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 import '../styles/buttonControls.css'
 
 const ButtonControls = ({ paused, playTrack, pauseTrack, selectedSong, currentTime, duration }) => {
@@ -37,7 +38,10 @@ const ButtonControls = ({ paused, playTrack, pauseTrack, selectedSong, currentTi
 
   const renderControls = () => {
     return (
-        <Fragment>
+        <div className="song-controls">
+          <div className="title">
+            <h3> {selectedSong} </h3>
+          </div>
           <div className='buttons'>
             { paused ?
               <img className="button" src="/play-button.svg" alt="play button" onClick={playTrack} /> :
@@ -45,15 +49,14 @@ const ButtonControls = ({ paused, playTrack, pauseTrack, selectedSong, currentTi
             }
           </div>
           { <div className='progress-bar'>{`${formatCurrent()} / ${formatDuration()}`} </div> }
-          <div className="title">
-            <h3> {selectedSong} </h3>
-          </div>
-        </Fragment>
+        </div>
     )
   }
 
   return (
     <div className="button-control">
+      <NavLink exact to='/' className='nav-link'><h3>Music</h3></NavLink>
+      <NavLink exact to="/artwork" className='nav-link'><h3>Art</h3></NavLink>
       {selectedSong && renderControls()}
     </div>
   )

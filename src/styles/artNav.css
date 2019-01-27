@@ -1,33 +1,31 @@
-.music-nav {
+.art-nav {
   grid-column: 2;
   grid-row: 1/4;
   overflow: scroll;
+  padding: 10vh 10vw;
 }
 
-.song-title {
-  /* width: 100%; */
-  font-family: 'Staatliches', serif;
-  font-size: 8vw;
-  font-weight: bolder;
-  font-stretch: expanded;
-  line-height: .1rem;
+.artwork {
   float:right;
-  padding-right: 5vw;
   transform-style: preserve-3d;
   transform-origin: right center;
   transform: rotate3d(0, 1, 0, -35deg) scale(1) translateZ(0);
   transition: all .3s linear;
+  width: 40vw;
+  margin: 1vh 1vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.song-container {
+.art-container {
   width: 100%;
   cursor: pointer;
+  padding: 2vh 5vw;
   transform-style: preserve-3d;
   transform-origin: right center;
   transform: perspective(300vw);
 }
 
-.song-title:hover {
+.artwork:hover {
   transform: rotate3d(0, 1, 0, -25deg) scale(1.1) translateZ(0);
-  color: #F5E3E0;
+  z-index: 3000;
 }
