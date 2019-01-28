@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import '../styles/buttonControls.css'
 
-const ButtonControls = ({ paused, playTrack, pauseTrack, selectedSong, currentTime, duration }) => {
+const ButtonControls = ({ paused, playTrack, pauseTrack, selectedSong, currentTime, duration, color }) => {
 
   const formatDuration = () => {
     if (duration){
@@ -55,8 +55,8 @@ const ButtonControls = ({ paused, playTrack, pauseTrack, selectedSong, currentTi
 
   return (
     <div className="button-control">
-      <NavLink exact to='/' className='nav-link'><h3>Music</h3></NavLink>
-      <NavLink exact to="/artwork" className='nav-link'><h3>Art</h3></NavLink>
+      <NavLink exact to='/' className={`nav-link ${color}`} ><h3>Music</h3></NavLink>
+      <NavLink exact to="/artwork" className={`nav-link ${color}`} ><h3>Art</h3></NavLink>
       {selectedSong && renderControls()}
     </div>
   )

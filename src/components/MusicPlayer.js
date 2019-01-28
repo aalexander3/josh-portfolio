@@ -123,7 +123,8 @@ class MusicPlayer extends Component {
           paused={this.state.paused}
           currentTime={this.state.player.currentTime}
           selectedSong={this.props.selectedSong}
-          duration={this.state.player.duration} />
+          duration={this.state.player.duration}
+          color={this.props.color} />
       </div>
     )
   }

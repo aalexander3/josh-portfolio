@@ -48,7 +48,7 @@ class App extends Component {
   }
 
   render() {
-    const { songList, selectedSong, artworks } = this.state
+    const { songList, selectedSong, artworks, color } = this.state
     return (
       <div className={`App ${colors[this.state.color]}`}>
         <DisplayInfo />
@@ -60,7 +60,7 @@ class App extends Component {
               return <ArtNav artworks={artworks} />
             }}/>
         </Switch>
-        <MusicPlayer selectedSong={selectedSong} />
+        <MusicPlayer selectedSong={selectedSong} color={colors[color]} />
       </div>
     );
   }

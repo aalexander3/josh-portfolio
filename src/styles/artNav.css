@@ -26,6 +26,6 @@
 }
 
 .artwork:hover {
-  transform: rotate3d(0, 1, 0, -25deg) scale(1.1) translateZ(0);
+  transform: rotate3d(0, 1, 0, -10deg) scale(1.1) translateZ(0);
   z-index: 3000;
 }
