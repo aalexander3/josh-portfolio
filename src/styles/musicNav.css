@@ -25,9 +25,15 @@
   transform-style: preserve-3d;
   transform-origin: right center;
   transform: perspective(300vw);
+  animation: upAndSpin 1.2s;
 }
 
 .song-title:hover {
   transform: rotate3d(0, 1, 0, -25deg) scale(1.1) translateZ(0);
   color: #F5E3E0;
+}
+
+@keyframes upAndSpin {
+    from {transform: translateY(800px) perspective(0vw) rotate3d(0, 1, 0, -45deg)}
+    to {transform: translateY(0px) perspective(300vw) rotate3d(0, 1, 0, 0deg)}
 }
