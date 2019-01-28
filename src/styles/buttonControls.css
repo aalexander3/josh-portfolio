@@ -79,3 +79,13 @@
 .nav-link.yellow:hover {
   color: #f7ff00;
 }
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+  .button-control h3 {
+    font-size: 1.6em;
+  }
+
+  .progress-bar {
+    font-size: 1.6em;
+  }
+}

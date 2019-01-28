@@ -8,3 +8,42 @@
 .display-info h1, h2 {
   font-family: 'Major Mono Display';
 }
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .display-info {
+    grid-row: 1;
+    grid-column: 1/2;
+    margin-top: 10vh;
+    padding: 0 4vw;
+  }
+
+  .display-info h1 {
+    font-size: 1.2em;
+  }
+
+  .display-info h2 {
+    font-size: .8em;
+  }
+}
+
+/* iPads and tablets (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+  .display-info {
+    grid-row: 1;
+    grid-column: 1/2;
+    padding: 0 4vw;
+    margin-top: 10vh;
+  }
+
+  .display-info h1 {
+    font-size: 3em;
+  }
+  .display-info h2 {
+    font-size: 2.3em;
+  }
+  .display-info h3 {
+    font-size: 2.3em;
+  }
+}

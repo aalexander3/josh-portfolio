@@ -35,3 +35,15 @@
     from {transform: translateY(800px) perspective(0vw) rotate3d(0, 1, 0, -45deg)}
     to {transform: translateY(0px) perspective(300vw) rotate3d(0, 1, 0, 0deg)}
 }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .artwork {
+    width: 65vw;
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+  .artwork {
+    width: 50vw;
+  }
+}
