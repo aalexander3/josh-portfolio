@@ -8,7 +8,7 @@ import { Switch, Route } from 'react-router-dom'
 import '../styles/App.css';
 
 const colors = ['pink', 'orange', 'red', 'purple', 'indigo', 'cyan', 'green', 'yellow']
-const songs = ['Skinned Knees', "Where'd You Go", "What We Call Love", "Noticed", "Make You Smile", "Sweet Cherie"]
+const songs = ['dope', "new age", "love the ugly", "lit like me", "sampled", "quick", "10 10 10 (eP)", "E 2 Z", "high again", "drake type beat"]
 const artworks = ['Arren Site', 'Forecast Detail', 'Forecast VR', 'Investr', 'Josh Site', 'VR Scene']
 
 class App extends Component {

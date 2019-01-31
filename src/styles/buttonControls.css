@@ -5,6 +5,7 @@
   grid-row: 3;
   background-color: #F5E3E0;
   width: 96vw;
+  height: 8vh;
   padding-left: 4vw;
   box-shadow: 0 -2px 1px 0 rgba(0, 0, 0, 0.2), 0 -4px 1px 0 rgba(0, 0, 0, 0.18);
   z-index: 1;
@@ -25,6 +26,7 @@
 .buttons {
   display: flex;
   margin: 0 2vw;
+  height: 8vh;
 }
 
 .progress-bar {
@@ -88,6 +90,11 @@
   .button-control {
     padding-left: 6vw;
     width: 94vw;
+    height: 8vh;
+  }
+
+  .song-controls {
+    z-index: 4000;
   }
 }
 

@@ -52,6 +52,7 @@ body {
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   .App {
-    grid-template-rows: 32vh 55vh 13vh;
+    grid-template-rows: 30vh 50vh 8vh;
+    /* padding-bottom: 7vh; */
   }
 }

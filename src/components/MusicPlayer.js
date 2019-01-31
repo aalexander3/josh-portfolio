@@ -1,21 +1,30 @@
 import React, { Component } from 'react'
 import ButtonControls from './ButtonControls'
-import noticed from './../assets/music/Noticed.wav'
-import makeYouSmile from './../assets/music/Make You Smile.wav'
-import skinnedKnees from './../assets/music/Skinned Knees.wav'
-import sweetCherie from './../assets/music/Sweet Cherie.wav'
-import wwcl from './../assets/music/What We Call Love.wav'
-import wyg from "./../assets/music/Where'd You Go.wav"
+import ten from './../assets/music/10 10 10 (eP).wav'
+import dope from './../assets/music/dope.wav'
+import drake from './../assets/music/drake type beat.wav'
+import e2z from './../assets/music/E 2 Z.wav'
+import high from "./../assets/music/high again.wav"
+import llm from "./../assets/music/lit like me.wav"
+import ltu from "./../assets/music/love the ugly.wav"
+import newAge from "./../assets/music/new age.wav"
+import quick from "./../assets/music/quick.wav"
+import sampled from "./../assets/music/sampled.wav"
 
 import '../styles/musicPlayer.css'
 
+
 const musicMap = {
-  "Noticed": noticed,
-  "Make You Smile": makeYouSmile,
-  "Skinned Knees": skinnedKnees,
-  "Sweet Cherie": sweetCherie,
-  "What We Call Love": wwcl,
-  "Where'd You Go": wyg
+  "dope": dope,
+  'new age': newAge,
+  'love the ugly': ltu,
+  'lit like me': llm,
+  'sampled': sampled,
+  'quick': quick,
+  '10 10 10 (eP)': ten,
+  'E 2 Z': e2z,
+  'high again': high,
+  'drake type beat': drake
 }
 
 class MusicPlayer extends Component {
