@@ -13,7 +13,7 @@ body {
 .App {
   display: grid;
   grid-template-columns: 40vw 60vw;
-  grid-template-rows: 60vh 32vh 8vh;
+  grid-template-rows: 32vh 60vh 8vh;
   transition: background 3.5s linear;
 }
 
@@ -47,4 +47,11 @@ body {
 
 .App.yellow {
   background: #f7ff00;  /* fallback for old browsers */
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .App {
+    grid-template-rows: 32vh 55vh 13vh;
+  }
 }

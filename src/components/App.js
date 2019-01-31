@@ -3,6 +3,7 @@ import DisplayInfo from './DisplayInfo'
 import MusicNav from './MusicNav'
 import MusicPlayer from './MusicPlayer'
 import ArtNav from './ArtNav'
+import MediaList from './MediaList'
 import { Switch, Route } from 'react-router-dom'
 import '../styles/App.css';
 
@@ -40,7 +41,7 @@ class App extends Component {
   }
 
   nextColor = () => {
-    if (this.state.color < colors.length){
+    if (this.state.color < colors.length - 1){
       return this.state.color + 1
     } else {
       return 0
@@ -59,6 +60,9 @@ class App extends Component {
           <Route exact path='/artwork' render={() => {
               return <ArtNav artworks={artworks} />
             }}/>
+          <Route exact path='/media'
+            render={() => <MediaList />}
+            />
         </Switch>
         <MusicPlayer selectedSong={selectedSong} color={colors[color]} />
       </div>

@@ -5,12 +5,11 @@
 }
 
 .song-title {
-  /* width: 100%; */
   font-family: 'Staatliches', serif;
   font-size: 8vw;
   font-weight: bolder;
   font-stretch: expanded;
-  line-height: .1rem;
+  margin: 1vw 0;
   float:right;
   padding-right: 5vw;
   transform-style: preserve-3d;
@@ -31,6 +30,16 @@
 .song-title:hover {
   transform: rotate3d(0, 1, 0, -25deg) scale(1.1) translateZ(0);
   color: #F5E3E0;
+}
+
+.media-link {
+  color: #1D1E2B;
+  text-decoration: none;
+}
+
+.media-link:hover {
+  color: #F5E3E0;
+  text-decoration: underline;
 }
 
 @keyframes upAndSpin {

@@ -4,7 +4,7 @@ import '../styles/artNav.css'
 
 const ArtNav = ({ artworks }) => {
   const artMap = () => {
-    return artworks.map(artwork => <Artwork artwork={artwork} />)
+    return artworks.map(artwork => <Artwork key={artwork} artwork={artwork} />)
   }
 
   return (
