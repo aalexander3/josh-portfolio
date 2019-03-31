@@ -4,7 +4,9 @@ import MusicNav from './MusicNav'
 import MusicPlayer from './MusicPlayer'
 import ArtNav from './ArtNav'
 import MediaList from './MediaList'
+import GalleryView from './GalleryView'
 import { Switch, Route } from 'react-router-dom'
+import { withRouter } from 'react-router'
 import '../styles/App.css';
 
 const colors = ['pink', 'orange', 'red', 'purple', 'indigo', 'cyan', 'green', 'yellow']
@@ -50,9 +52,10 @@ class App extends Component {
 
   render() {
     const { songList, selectedSong, artworks, color } = this.state
+
     return (
       <div className={`App ${colors[this.state.color]}`}>
-        <DisplayInfo />
+        {this.props.location.pathname !== '/gallery' && <DisplayInfo /> }
         <Switch>
           <Route exact path='/' render={()=> {
               return <MusicNav songList={songList} selectedSong={selectedSong} selectSong={this.selectSong} />
@@ -63,6 +66,9 @@ class App extends Component {
           <Route exact path='/media'
             render={() => <MediaList />}
             />
+          <Route exact path='/gallery'
+            render={() => <GalleryView artworks={artworks}/>}
+            />
         </Switch>
         <MusicPlayer selectedSong={selectedSong} color={colors[color]} />
       </div>
@@ -70,4 +76,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

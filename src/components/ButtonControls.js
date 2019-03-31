@@ -58,6 +58,7 @@ const ButtonControls = ({ paused, playTrack, pauseTrack, selectedSong, currentTi
       <NavLink exact to='/' className={`nav-link ${color}`} ><h3>Music</h3></NavLink>
       <NavLink exact to="/artwork" className={`nav-link ${color}`} ><h3>Art</h3></NavLink>
       <NavLink exact to="/media" className={`nav-link ${color}`} ><h3>Media</h3></NavLink>
+      <NavLink exact to="/gallery" className={`nav-link ${color}`} ><h3>Gallery</h3></NavLink>
       {selectedSong && renderControls()}
     </div>
   )
