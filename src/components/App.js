@@ -9,7 +9,7 @@ import '../styles/App.css';
 
 const colors = ['pink', 'orange', 'red', 'purple', 'indigo', 'cyan', 'green', 'yellow']
 const songs = ['dope', "new age", "love the ugly", "lit like me", "sampled", "quick", "10 10 10 (eP)", "E 2 Z", "high again", "drake type beat"]
-const artworks = ['Arren Site', 'Forecast Detail', 'Forecast VR', 'Investr', 'Josh Site', 'VR Scene']
+const artworks = ['feet-1.jpg', 'feet-2.jpg', 'foot-1.jpg', 'glowing.jpg', 'blue-glow.mp4', 'mirror-vid.mp4', 'mirror-1.jpg', 'mirror-2.jpg', 'glowing-plants.mp4', 'plants-2.jpg', 'plants.jpg', 'plant-vid.mp4']
 
 class App extends Component {
   state = {
