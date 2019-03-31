@@ -24,6 +24,9 @@ class App extends Component {
 
   componentDidMount(){
     this.startColors()
+
+    // load images and songs for fasting load times
+    artworks.forEach(artwork => require(`../assets/images/${artwork}`))
   }
 
   componentWillUnmount(){
