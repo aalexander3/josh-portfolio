@@ -17,4 +17,19 @@
 .gallery-work {
   max-height: 100%;
   max-width: 100%;
+  animation: fade-in 1s;
+}
+
+.gallery-work.fade-out {
+  animation: fade-out 1s;
+}
+
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fade-out {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }

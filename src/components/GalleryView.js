@@ -36,8 +36,8 @@ class GalleryView extends Component {
   }
 
   trackMouse = e => {
-    let switchPoint = e.target.offsetWidth / 2
-    if (e.screenX - 100 > switchPoint) {
+    let switchPoint = e.target.offsetWidth / 2 + 200
+    if (e.screenX > switchPoint) {
       if (this.state.left) {
         this.setState({ left: false })
       }
@@ -48,7 +48,7 @@ class GalleryView extends Component {
     }
   }
 
-  triggerCarousel = () => {
+  triggerCarousel = e => {
     this.state.left ? this.prevArt() : this.nextArt()
   }
 
@@ -63,7 +63,6 @@ class GalleryView extends Component {
 
   prevArt = () => {
     const { currentArtwork } = this.state
-    const { artworks } = this.props
 
     if (currentArtwork > 0) {
       this.setState({currentArtwork: currentArtwork - 1})
@@ -73,7 +72,6 @@ class GalleryView extends Component {
   getCurrentImage = () => {
     const { currentArtwork } = this.state
     const { artworks } = this.props
-
     return this.imageOrVideo(artworks[currentArtwork])
   }
 
